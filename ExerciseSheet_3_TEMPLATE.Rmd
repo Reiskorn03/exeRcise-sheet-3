@@ -307,6 +307,6 @@ ggplot(germany_data, aes(x = Year, y = Cigarettes_per_day)) +
 ## Final Note
 
 Make sure to push all your commits and changes to GitHub before
-submittining the exercise sheet.
+submittining the exercise sheet. :)
 
 
