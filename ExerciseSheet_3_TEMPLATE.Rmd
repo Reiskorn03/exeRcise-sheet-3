@@ -123,7 +123,7 @@ Why are some of the values in **"Anzahl"** not numeric?
 c)  Calculate the total number of babies born in Munich in 2022
     and 2023. Which year had the bigger baby-boom?
     
-```{r 1a, echo = TRUE}
+```{r 2c, echo = TRUE}
 total_babies_2022 <- sum(data_2022$Anzahl)
 total_babies_2023 <- sum(data_2023$Anzahl)
 
@@ -141,6 +141,14 @@ if (total_babies_2023 > total_babies_2022) {
 
 d)  Add a new column `year` to both datasets which holds the correct
     year for each.
+
+```{r 2d, echo = TRUE}
+data_2022$year <- 2022
+data_2023$year <- 2023
+
+head(data_2022)
+head(data_2023)
+```
 
 e)  Combine both datasets into one using `bind_rows()`.
 
