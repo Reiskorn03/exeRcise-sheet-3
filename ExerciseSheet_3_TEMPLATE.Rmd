@@ -106,7 +106,7 @@ b)  Load the data for both years into R. Check the type of the count
     some of the counts are inaccurate because of this. Explain your
     solution and the repercussions.
     
-```{r 2b, echo = TRUE}
+```{r 3b, echo = TRUE}
 library(dplyr)
 data_2023 <- read.csv("vornamen-muenchen-2023.csv")
 data_2022 <- read.csv("open_data_portal_2022.csv")
@@ -136,7 +136,7 @@ Why are some of the values in **"Anzahl"** not numeric?
 c)  Calculate the total number of babies born in Munich in 2022
     and 2023. Which year had the bigger baby-boom?
     
-```{r 2c, echo = TRUE}
+```{r 3c, echo = TRUE}
 total_babies_2022 <- sum(data_2022$Anzahl)
 total_babies_2023 <- sum(data_2023$Anzahl)
 
@@ -155,7 +155,7 @@ if (total_babies_2023 > total_babies_2022) {
 d)  Add a new column `year` to both datasets which holds the correct
     year for each.
 
-```{r 2d, echo = TRUE}
+```{r 3d, echo = TRUE}
 data_2022$year <- 2022
 data_2023$year <- 2023
 
@@ -165,7 +165,7 @@ head(data_2023)
 
 e)  Combine both datasets into one using `bind_rows()`.
 
-```{r 2e, echo = TRUE}
+```{r 3e, echo = TRUE}
 combined_data <- bind_rows(data_2022, data_2023)
 
 str(combined_data)
@@ -176,7 +176,7 @@ f)  Combine the counts for same names to determine the most popular
     names across both years. Print out the top 10 names in a nicely
     formatted table for both years. Include a table caption.
     
-```{r 1a, echo = TRUE}
+```{r 3f, echo = TRUE}
 name_counts <- combined_data %>%
   group_by(Vorname, Geschlecht) %>%
   summarise(Total = sum(Anzahl, na.rm = TRUE)) %>%
@@ -205,14 +205,23 @@ b)  Download the dataset and track it in git.
 
 c)  Put the name / title of the dataset and a link to it below.
 
--   Dataset Name: ...
--   Link: <https://github.com/owid/owid-datasets/>...
+-   Dataset Name: Smoking prevalence and cigarette consumption (IHME, GHDx (2012)).csv
+-   Link: <https://github.com/owid/owid-datasets/blob/master/datasets/Smoking%20prevalence%20and%20cigarette%20consumption%20(IHME%2C%20GHDx%20(2012))/Smoking%20prevalence%20and%20cigarette%20consumption%20(IHME%2C%20GHDx%20(2012)).csv>
 
 d)  Come up with a (research) question you want to answer with the data
     and briefly explain why you believe this is an interesting question
     within one sentence. It should be a question that can be answered
     with the dataset and using R.
+    
+**Question:** Which 3 countries have the highest cigarette consumption per smoker per day in 2010?
+**Explanation:** It is really interesting which of the countries have the highest cigarette consumption per smoker per day because with this information you can possibly track how many cigarettes the country is consuming with the amount of smokers in their country.
+
 e)  Use R to answer your chosen question.
+
+```{r 4e, echo = TRUE}
+
+```
+
 f)  Create a meaningful plot / figure with the dataset. Make sure to
     provide a figure caption (via the chunk options / Rmarkdown) and
     correctly label the figure.
